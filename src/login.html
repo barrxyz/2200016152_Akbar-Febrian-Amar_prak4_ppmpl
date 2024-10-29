@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="button" id="loginButton">Login</button>
+    </form>
+</body>
+</html>
+
+#Pesan Error untuk Login Gagal
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+    <div id="errorMessage" style="color: red; display: none;">Invalid username or password</div>
+</body>
+
+#Logika untuk Menampilkan Pesan Error
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form untuk disubmit
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Simulasi validasi login
+        if (username !== 'testuser' || password !== 'password123') {
+            document.getElementById('errorMessage').style.display = 'block'; // Tampilkan pesan error
+        } else {
+            document.getElementById('errorMessage').style.display = 'none'; // Sembunyikan pesan error
+            // Proses login sukses di sini
+        }
+    });
+</script>
+
